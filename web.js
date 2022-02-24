@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   let reqBody = req.body
   // console.log("req.body: ", JSON.stringify(reqBody, null, 2));
-  console.log("req.body: ", reqBody);
+  console.log("req.body: ", `${reqBody}`);
 
 //   let myself = "https://nodejs-bot-25cbybmeaa-uc.a.run.app"
   let myself = reqBody._links.self.href
