@@ -82,13 +82,13 @@ app.post('/', function (req, res) {
   })
 
   let runAway = false
-  if ((faceLeft+faceRight+faceUp+faceDown) > 2) {
+  if ((faceLeft+faceRight+faceUp+faceDown) >= 1) {
     runAway = true
   }
   let blocked = false
   if (runAway) {
     let cantF = (blockedLeft && (myselfState.direction === "W")) ||(blockedRight && (myselfState.direction === "E")) ||(blockedUp && (myselfState.direction === "N")) ||(blockedDown && (myselfState.direction === "S"))
-    if (cantF) {
+    if (cantF ) {
       res.send('L')
     } else {
       res.send('F')
