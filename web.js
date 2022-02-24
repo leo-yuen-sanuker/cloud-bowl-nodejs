@@ -90,10 +90,13 @@ app.post('/', function (req, res) {
     let cantF = (blockedLeft && (myselfState.direction === "W")) ||(blockedRight && (myselfState.direction === "E")) ||(blockedUp && (myselfState.direction === "N")) ||(blockedDown && (myselfState.direction === "S"))
     if (cantF ) {
       res.send('L')
+      console.log('LLLLLL')
     } else {
       res.send('F')
+      console.log('FFFF')
     }
   } else {
+    console.log('TTTT')
     res.send('T')
   }
 });
