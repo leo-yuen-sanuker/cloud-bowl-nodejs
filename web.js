@@ -11,6 +11,7 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   let reqBody = req.body
   console.log("req.body: ", JSON.stringify(reqBody, null, 2));
+  console.log("req.body: ", reqBody);
 
   let myself = "https://nodejs-bot-25cbybmeaa-uc.a.run.app"
   let myselfStatus = Object.entries(reqBody.arena.status)
