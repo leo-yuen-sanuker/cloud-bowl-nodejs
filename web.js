@@ -96,11 +96,6 @@ app.post('/', function (req, res) {
   } else {
     res.send('T')
   }
-  const moves = ['F', 'T', 'L', 'R'];
-
-
-  // res.send(moves[Math.floor(Math.random() * moves.length)]);
-  res.send('L');
 });
 
 app.listen(process.env.PORT || 8080);
