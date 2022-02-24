@@ -86,19 +86,21 @@ app.post('/', function (req, res) {
     runAway = true
   }
   let blocked = false
+  let resText = "T"
   if (runAway) {
     let cantF = (blockedLeft && (myselfState.direction === "W")) ||(blockedRight && (myselfState.direction === "E")) ||(blockedUp && (myselfState.direction === "N")) ||(blockedDown && (myselfState.direction === "S"))
     if (cantF ) {
-      res.send('L')
+      resText = 'L'
       console.log('LLLLLL')
     } else {
-      res.send('F')
+      resText = 'F'
       console.log('FFFF')
     }
   } else {
     console.log('TTTT')
-    res.send('T')
+    resText = 'T'
   }
+  res.send(resText)
 });
 
 app.listen(process.env.PORT || 8080);
