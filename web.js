@@ -15,7 +15,7 @@ app.post('/', function (req, res) {
 
 //   let myself = "https://nodejs-bot-25cbybmeaa-uc.a.run.app"
   let myself = reqBody._links.self.href
-  let myselfStatus = Object.entries(reqBody.arena.status).find(e=>(e[0] === myself))
+  let myselfStatus = Object.entries(reqBody.arena.state).find(e=>(e[0] === myself))
   console.log("myselfStatus: ", myselfStatus)
 
   const moves = ['F', 'T', 'L', 'R'];
