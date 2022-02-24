@@ -10,11 +10,14 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   let reqBody = req.body
-  console.log("req.body: ", JSON.stringify(reqBody, null, 2));
+  // console.log("req.body: ", JSON.stringify(reqBody, null, 2));
   console.log("req.body: ", reqBody);
 
-  let myself = "https://nodejs-bot-25cbybmeaa-uc.a.run.app"
-  let myselfStatus = Object.entries(reqBody.arena.status)
+//   let myself = "https://nodejs-bot-25cbybmeaa-uc.a.run.app"
+  let myself = reqBody._links.self.href
+  let myselfStatus = Object.entries(reqBody.arena.status).find(e=>(e[0] === myself))
+  console.log("myselfStatus: ", myselfStatus)
+
   const moves = ['F', 'T', 'L', 'R'];
   // t23r532egwr3hrt
   // res.send(moves[Math.floor(Math.random() * moves.length)]);
